@@ -1,6 +1,7 @@
 # SORTING ARRAY USING MERGE-SORT ALGORITHM
 # AUTHOR: RAJAN GUPTA
 # CREATED: 1 DEC 2014
+# UPDATED: 1 DEC 2014
 
 # Merge-Sort function
 def merge_sort(inArray)
