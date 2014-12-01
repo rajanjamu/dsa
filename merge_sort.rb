@@ -3,19 +3,44 @@
 # CREATED: 1 DEC 2014
 
 # Split array and return two arrays
-def split_array(array)
+def split_array(inArray)
+	len = inArray.length
+	if (len % 2 == 0)
+		outArray = [inArray[0...len/2],inArray[len/2..len]]
+	else
+		outArray = [inArray[0..len/2],inArray[len/2+1..len]]
+	end
+	return outArray
 end
 
 # Sort the input array
-def sort_array(array)
+def sort_array(inArray)
+	outArray = []
+	len = inArray.length
+	if inArray[0][0] > inArray[1][0]
+		outArray[0] = inArray[1]
+		outArray[1] = inArray[0]
+	else
+		outArray = inArray
+	end
+
+	return outArray
 end
 
 # Merge two arrays and return merged array
-def merge_array(array1, array2)
+def merge_array(inArray)
+	return inArray.flatten
+end
+
+def merge_sort(inArray)
+	splitArray = split_array(inArray)
+	sortArray = sort_array(splitArray)
+	mergeArray = merge_array(sortArray)
+	return mergeArray
 end
 
 # Input variable
-arr = [3,7,1,9,2,67,0]
+arr = [7,9]
 
 # Printing out the result
-puts merge_sort_array(arr)
+print merge_sort(arr)
