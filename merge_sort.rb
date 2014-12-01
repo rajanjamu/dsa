@@ -30,7 +30,16 @@ end
 def sort_array(inArray)
 	len = inArray.length
 	(0...len).each do |arr|
-		merge_sort(arr)
+		if inArray[0][0].length == 1
+			if inArray[0][0] > inArray[1][0]
+				outArray[0] = inArray[1]
+				outArray[1] = inArray[0]
+			else
+				outArray = inArray
+			end
+		else
+			merge_sort(arr)
+		end
 	end
 end
 
@@ -47,7 +56,8 @@ def merge_sort(inArray)
 end
 
 # Input variable
-arr = [7,9]
+arr = [7,9,4]
 
 # Printing out the result
-print merge_sort(arr)
+print split_array(arr)
+puts ""
