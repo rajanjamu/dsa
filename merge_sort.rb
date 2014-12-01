@@ -14,17 +14,24 @@ def split_array(inArray)
 end
 
 # Sort the input array
-def sort_array(inArray)
-	outArray = []
-	len = inArray.length
-	if inArray[0][0] > inArray[1][0]
-		outArray[0] = inArray[1]
-		outArray[1] = inArray[0]
-	else
-		outArray = inArray
-	end
+# def sort_array(inArray)
+# 	outArray = []
+# 	len = inArray.length
+# 	if inArray[0][0] > inArray[1][0]
+# 		outArray[0] = inArray[1]
+# 		outArray[1] = inArray[0]
+# 	else
+# 		outArray = inArray
+# 	end
 
-	return outArray
+# 	return outArray
+# end
+
+def sort_array(inArray)
+	len = inArray.length
+	(0...len).each do |arr|
+		merge_sort(arr)
+	end
 end
 
 # Merge two arrays and return merged array
